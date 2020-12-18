@@ -4,14 +4,12 @@ import "./index.css";
  
 const Counter = (props) => {
  const [count, setCounter] = useState(5); // muutuja ja muutuja “setter”
- const incrementCounter = () => {setCounter(Math.min(count+props.step, 10))} // funktsioon
- const decrementCounter = () => {setCounter(Math.max(count-props.step, 0))} // funktsioon
  return (
  <div>
   <h2>Step: {props.step}</h2>
-  <button onClick={() => decrementCounter()}>-</button>
+  <button onClick={setCounter(Math.max(count-props.step, 0))}>-</button>
   <span>  {Math.round(count*10)/10}  </span>
-  <button onClick={() => incrementCounter()}>+</button>
+  <button onClick={setCounter(Math.max(count-props.step, 0))}>+</button>
   </div>
 )
 }
