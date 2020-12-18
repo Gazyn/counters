@@ -7,9 +7,9 @@ const Counter = (props) => {
  return (
  <div>
   <h2>Step: {props.step}</h2>
-  <button onClick={setCounter(Math.max(count-props.step, 0))}>-</button>
+  <button onClick={() => {setCounter(Math.max(count-props.step, 0))}}>-</button>
   <span>  {Math.round(count*10)/10}  </span>
-  <button onClick={setCounter(Math.max(count-props.step, 0))}>+</button>
+  <button onClick={() => {setCounter(Math.min(count+props.step, 10))}}>+</button>
   </div>
 )
 }
